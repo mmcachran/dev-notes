@@ -27,3 +27,8 @@ git shortlog -s -n --all
 git log -L:<function>:<file>
 git log -L150,+22:<file>
 ```
+
+### Show all branches merged into a specific branch
+``` bash
+git branch -r --merged | grep origin | grep -v '>' | grep -v 'prod' | xargs -L1
+```
