@@ -21,3 +21,9 @@ git log --since="6am" --author="mmcachran" --pretty=tformat: --numstat | awk '{ 
 ``` bash
 git shortlog -s -n --all
 ```
+
+### Log for function name/lines in a file:
+``` bash
+git log -L:<function>:<file>
+git log -L150,+22:<file>
+```
