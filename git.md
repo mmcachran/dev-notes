@@ -14,7 +14,7 @@ git commit -m "Converting submodule $submodule to regular files" # Commit the ne
 
 ### Show lines of code committed to a repository for the day
 ```bash
-git log --since="6am" --author="Matt McAchran" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
+git log --since="6am" --author="mmcachran" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
 ```
 
 ### Git stats for all branches
