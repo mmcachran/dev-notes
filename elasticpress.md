@@ -5,3 +5,11 @@
 for i in $(cat ~/sitelist); do echo "Entering site ""$i"; wp elasticpress index --posts-per-page=10 --url="<url>""$i"; done
 ```
 
+### Reindexing an entire network site by site:
+``` bash 
+for url in $(wp site list --field=url --allow-root)
+do
+	echo "$url:"
+	wp elasticpress index --keep-active --url=$url 
+done
+```
