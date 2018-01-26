@@ -57,6 +57,8 @@ echo "show variables like 'max_connections';" | mysql
 ### Recursively Remove Subversion from Directory
 ``` bash
 find . -name '.svn' | xargs rm -r
+
 OR
+
 find . -name ".svn" -type d -exec rm -rf {} \;
 ```
