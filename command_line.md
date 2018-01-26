@@ -1,4 +1,4 @@
-# Command line DEV notes
+# Command line
 
 ### Check syntax on all PHP files in a directory
 ``` bash
