@@ -62,3 +62,11 @@ OR
 
 find . -name ".svn" -type d -exec rm -rf {} \;
 ```
+
+### Switch shell to use PHP7 by default for the current session
+```scl enable php70 /bin/bash```
+
+### Swith to using PHP7 
+```cd ~ && mkdir ~/bin && cd ~/bin && ln -s /usr/bin/php70 php```
+
+Then add `export PATH=~/bin:$PATH` to your `~/.bash_profile`

@@ -13,7 +13,7 @@ git commit -m "Converting submodule $submodule to regular files" # Commit the ne
 ```
 
 ### Show lines of code committed to a repository for the day
-```bash
+``` bash
 git log --since="6am" --author="mmcachran" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
 ```
 
@@ -31,4 +31,14 @@ git log -L150,+22:<file>
 ### Show all branches merged into a specific branch
 ``` bash
 git branch -r --merged | grep origin | grep -v '>' | grep -v 'prod' | xargs -L1
+```
+
+### Show global git config
+``` bash 
+git config --global -l 
+```
+
+### Ignore case in global config
+``` bash
+git config --global core.ignorecase false
 ```
