@@ -5,6 +5,10 @@
 for f in *.php; do php -l "$f"; done;
 ```
 
+``` bash
+find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
+```
+
 ### Find base64 encoded strings in php code
 ``` bash
 find . -name "*.php" -exec grep "base64" '{}' \; -print &> b64-detections.txt
