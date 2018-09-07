@@ -1,1 +1,9 @@
+*~
 .DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+debug.log
+.idea
