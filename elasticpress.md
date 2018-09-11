@@ -22,5 +22,5 @@ done
 cat remove_indices.txt| awk '{ print $3 }' | pbcopy
 
 # 3. Remove the indices.
-do echo "Deleting Index ""$i";  curl -XDELETE https://<username>:<password>@<elasticsearch endpoint>/$i; done;
+for i in $(cat remove_indices.txt); do echo "Deleting Index ""$i";  curl -XDELETE https://<username>:<password>@<elasticsearch endpoint>/$i; done;
 ```
