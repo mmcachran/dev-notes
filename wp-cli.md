@@ -8,3 +8,6 @@
 
 ## Delete a term across all sites in the network
 ```wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp term delete category <category-slug> --by=slug --url=%"```
+
+## Update option across all sites in the network
+```wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp option update test_key test_value --url=%"```
