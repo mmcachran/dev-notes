@@ -14,7 +14,7 @@ do
 done
 ```
 
-### Deleting Indices on-by-one
+### Deleting Indices one-by-one
 ``` bash 
 # 1. Go to <elasticsearch endpoint>/_cat/indices/<prefix>*
 
