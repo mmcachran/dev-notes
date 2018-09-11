@@ -16,13 +16,11 @@ done
 
 ### Deleting Indices one-by-one
 ``` bash 
-# 1. Go to <elasticsearch endpoint>/_cat/indices/<prefix>*
+# 1. Go to <elasticsearch endpoint>/_cat/indices/<prefix>* and copy results into a text file.
 
-# 2. Copy this into a text file.
-
-# 3. Paste clipboard contents after the following command into text file.
+# 2. Paste clipboard contents after the following command into text file.
 cat remove_indices.txt| awk '{ print $3 }' | pbcopy
 
-# 4. Remove the indices.
+# 3. Remove the indices.
 do echo "Deleting Index ""$i";  curl -XDELETE https://<username>:<password>@<elasticsearch endpoint>/$i; done;
 ```
