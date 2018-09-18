@@ -30,7 +30,7 @@ git log -L150,+22:<file>
 
 ### Show all branches merged into a specific branch
 ``` bash
-git branch -r --merged | grep origin | grep -v '>' | grep -v 'prod' | xargs -L1
+git branch -r --merged | grep origin | grep -v '>' | grep -v 'master' | xargs -L1
 ```
 
 ### Show global git config
