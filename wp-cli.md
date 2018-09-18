@@ -11,3 +11,6 @@
 
 ## Update option across all sites in the network
 ```wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp option update test_key test_value --url=%"```
+
+## Flush rewrite rules for all sites in the network
+```wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp rewrite flush --url=%"```
