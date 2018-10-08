@@ -9,7 +9,7 @@ for f in *.php; do php -l "$f"; done;
 find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 ```
 
-### Exit during syntax checking if parse error is found
+### Exit during syntax checking if parse error is found (ex: CircleCI)
 ``` bash
 for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do php -l "$file"; done;
 ```
