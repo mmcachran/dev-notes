@@ -9,6 +9,11 @@ for f in *.php; do php -l "$f"; done;
 find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 ```
 
+### Exit during syntax checking if parse error is found
+``` bash
+for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do ERROR_COUNT=$(php -l $file | grep -c 'Parse error'); if [ "$ERROR_COUNT" -ne 0 ]; then exit 1; fi; done;
+```
+
 ### Find base64 encoded strings in php code
 ``` bash
 find . -name "*.php" -exec grep "base64" '{}' \; -print &> b64-detections.txt
