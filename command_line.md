@@ -11,7 +11,7 @@ find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 
 ### Exit during syntax checking if parse error is found
 ``` bash
-for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do ERROR_COUNT=$(php -l $file | grep -c 'Parse error'); if [ "$ERROR_COUNT" -ne 0 ]; then exit 1; fi; done;
+for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do ERROR=$(php -l $file); echo "$ERROR"; ERROR_COUNT=$(echo "$ERROR" | grep -c 'Parse error'); if [ "$ERROR_COUNT" -ne 0 ]; then echo "$ERROR"; exit 1; fi; done;
 ```
 
 ### Find base64 encoded strings in php code
