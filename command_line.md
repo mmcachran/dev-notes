@@ -9,7 +9,7 @@ for f in *.php; do php -l "$f"; done;
 find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 ```
 
-### Check only Git staged and modified files.
+### Run a syntax check on only Git staged files.
 ``` bash
 git diff --cached --name-only | xargs -I % php -l %
 ```
