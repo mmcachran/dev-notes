@@ -11,7 +11,21 @@ find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 
 ### Run a syntax check on only Git staged files.
 ``` bash
-git diff --cached --name-only | xargs -I % php -l %
+git diff --diff-filter=ACM --cached --name-only | grep '.php' | xargs -I % php -l %
+```
+
+## Example Husky NPM package.json configuration.
+``` json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "git diff --diff-filter=ACM --cached --name-only | grep '.php' | xargs -I % php -l %"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^1.1.2"
+  }
 ```
 
 ### Exit during syntax checking if parse error is found (ex: CircleCI)
