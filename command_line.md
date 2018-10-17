@@ -85,7 +85,7 @@ find . -name ".svn" -type d -exec rm -rf {} \;
 
 Then add `export PATH=~/bin:$PATH` to your `~/.bash_profile`
 
-### Run PHPCBF on all PHP files in a directory
+### Run PHPCBF on all PHP files in a directory except the vendor directory.
 ``` bash
 for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do phpcbf "$file"; done;
 ```
