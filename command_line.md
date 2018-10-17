@@ -14,20 +14,6 @@ find . -type f -iname "*.php" -not -path '*vendor*'  -exec php -l {}  \;
 git diff --diff-filter=ACM --cached --name-only | grep '.php' | xargs -I % php -l %
 ```
 
-## Example Husky NPM package.json configuration.
-``` json
-{
-  "husky": {
-    "hooks": {
-      "pre-commit": "git diff --diff-filter=ACM --cached --name-only | grep '.php' | xargs -I % php -l %"
-    }
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "husky": "^1.1.2"
-  }
-```
-
 ### Exit during syntax checking if parse error is found (ex: CircleCI)
 ``` bash
 for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do php -l "$file"; done;
