@@ -14,3 +14,6 @@
 
 ## Flush rewrite rules for all sites in the network
 ```wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp rewrite flush --url=%"```
+
+## CLI command to force the save_post hook to run on all published posts:
+```wp post list --field=ID --post_type=post --post_status=publish | xargs -I % wp post update % --post_status=publish```
