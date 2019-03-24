@@ -92,5 +92,5 @@ for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do phpcbf "$
 
 ### Run find/replace on files in an entire directory.
 ``` bash
-find ./ -name '*.js' | xargs perl -pi -e 's/<find>/<replace>/g'
+find ./ -name '*.php' | xargs perl -pi -e 's/<find>/<replace>/g'
 ```
