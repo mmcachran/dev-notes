@@ -89,3 +89,8 @@ Then add `export PATH=~/bin:$PATH` to your `~/.bash_profile`
 ``` bash
 for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do phpcbf "$file"; done;
 ```
+
+### Run find/replace on files in an entire directory.
+``` bash
+find ./ -name '*.js' | xargs perl -pi -e 's/<find>/<replace>/g'
+```
