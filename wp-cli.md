@@ -20,3 +20,6 @@
 
 ### List all taxonomies for a post.
 ```wp taxonomy list --fields=name | xargs -I % wp post term list <Post ID> %```
+
+### Recount all taxonomies
+```wp taxonomy list --field=name | xargs wp term recount```
