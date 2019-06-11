@@ -1,4 +1,4 @@
-##Force redirect all the things to https with web.config
+## Force redirect all the things to https with web.config
 
 ```<?xml version="1.0" encoding="UTF-8"?>
   <configuration>
@@ -19,8 +19,8 @@
 </configuration>```
 
 
-##See Block frames with web.config
-###Required on MS sites per internal security review.
+## See Block frames with web.config
+### Required on MS sites per internal security review.
 
 ```<system.webServer>
   ...
