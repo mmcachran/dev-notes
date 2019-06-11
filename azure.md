@@ -16,7 +16,8 @@
          </rules>
     </rewrite>
   </system.webServer>
-</configuration>```
+</configuration>
+```
 
 
 ## See Block frames with web.config
@@ -32,4 +33,5 @@
   </httpProtocol>
  
   ...
-</system.webServer>```
+</system.webServer>
+```
