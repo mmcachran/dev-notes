@@ -27,5 +27,5 @@
 ### Assign a term to all posts in a post type.
 ```wp post list --post_type=post --fields=ID | xargs -I % wp post term set % category "daily-briefing"```
 
-### Swap a term from a category to a custom taxonomy (then remove the original category on the post) and assign all posts to the new custom taxonomy term.
+### Swap a term from a category to a custom taxonomy term and remove the original category on the post.
 ```wp post list --field=ID --category=<category slug> | xargs -I % bash -c "wp post term add % <taxonomy> <term slug> --by=slug && wp post term remove % <taxonomy> <term slug>"```
