@@ -30,5 +30,5 @@
 ### Swap category to a custom taxonomy term and remove the original category on the post.
 ```wp post list --field=ID --category=<category slug> | xargs -I % bash -c "wp post term add % <taxonomy> <term slug> --by=slug && wp post term remove % <taxonomy> <term slug>"```
 
-### Copy parent_post into a meta field.
+### Copy parent post ID into a meta field.
 ```wp post list --field=ID | xargs -I % bash -c "wp post meta update % <meta field> $(wp post get % --field=post_parent)"```
