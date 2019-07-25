@@ -1,5 +1,5 @@
 ### Basic Config
-version: 2
+```version: 2
 jobs:
   build:
     docker:
@@ -98,4 +98,4 @@ jobs:
       # This will push the result to the {currentbranch}-built branch
       - deploy:
           name: Deploy -built branch to github
-          command: bash <(curl -s "https://raw.githubusercontent.com/Automattic/vip-go-build/master/deploy.sh")
+          command: bash <(curl -s "https://raw.githubusercontent.com/Automattic/vip-go-build/master/deploy.sh")```
