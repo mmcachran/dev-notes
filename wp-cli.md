@@ -34,4 +34,4 @@
 ```wp post list --field=ID | xargs -I % bash -c "wp post meta update % <meta field> $(wp post get % --field=post_parent)"```
 
 ### Run command on all posts depending on meta key.
-```wp post list --field=ID --meta_key=<meta key> '--meta_compare=1' | xargs -I % wp example transform run --post_id=%```
+```wp post list --field=ID --meta_key=<meta key> '--meta_compare=NOT EXISTS' | xargs -I % wp example transform run --post_id=%```
