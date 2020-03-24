@@ -94,3 +94,8 @@ for file in $(find . -type f -iname "*.php" -not -path '*vendor*'); do phpcbf "$
 ``` bash
 find ./ -name '*.php' | xargs perl -pi -e 's/<find>/<replace>/g'
 ```
+
+### Verify WordPress checksums for each site in a directory
+```bash
+for d in ./*/ ; do (cd "$d" && echo "Entering $d" && wp core verify-checksums --version=$(wp core version) && wp plugin verify-checksums); done
+ ```
