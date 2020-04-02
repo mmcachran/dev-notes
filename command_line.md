@@ -99,3 +99,8 @@ find ./ -name '*.php' | xargs perl -pi -e 's/<find>/<replace>/g'
 ```bash
 for d in ./*/ ; do (cd "$d" && echo "Entering $d" && wp core verify-checksums --version=$(wp core version) && wp plugin verify-checksums); done
  ```
+
+### Get MD5 fingerprint for pubkey
+```bash
+ssh-keygen -E md5 -lf ssh_host_ecdsa_key.pub
+```
