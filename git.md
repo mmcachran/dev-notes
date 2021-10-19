@@ -47,3 +47,10 @@ git config --global core.ignorecase false
 ``` bash
 git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
 ```
+
+### Reset-checkout.. checks out branch, removes untracked files, and re-inits submodules.
+``` bash
+checkout-reset() {
+	git checkout $1 && remove-untracked && git submodule update --init --recursive
+}
+```
