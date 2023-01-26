@@ -54,3 +54,8 @@ checkout-reset() {
 	git checkout $1 && remove-untracked && git submodule update --init --recursive
 }
 ```
+
+### Find lost files.
+``` bash
+git fsck --lost-found
+```
