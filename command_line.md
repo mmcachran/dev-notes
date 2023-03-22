@@ -104,3 +104,8 @@ for d in ./*/ ; do (cd "$d" && echo "Entering $d" && wp core verify-checksums --
 ```bash
 ssh-keygen -E md5 -lf ssh_host_ecdsa_key.pub
 ```
+
+### Parse XML for specific node
+```bash
+cat loa-properties.xml | xmlstarlet sel -t -m "/rss/channel/item" -v "listing_title" -n
+```
