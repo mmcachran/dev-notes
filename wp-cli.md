@@ -41,3 +41,4 @@
 
 ### Set a user to the same role across all sites on a multisite network.
 ```wp site list --field=url | xargs -I % wp user set-role <user ID> <role> --url=%```
+```for postID in $(wp post list --post_type=sfwd-topic --field=ID); do wp post meta update $postID sort_date "$(wp post get $postID --field=post_date)"; echo "$postID"; done;```
