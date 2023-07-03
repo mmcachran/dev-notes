@@ -33,6 +33,9 @@
 ### Copy parent post ID into a meta field.
 ```wp post list --field=ID | xargs -I % bash -c "wp post meta update % <meta field> $(wp post get % --field=post_parent)"```
 
+### Update post meta
+```for postID in $(wp post list --post_type=sfwd-topic --field=ID); do wp post meta update "$postID" sort_date '$(wp post get "$postID" --field=post_date_gmt)'; echo "$postID"; done;```
+
 ### Run command on all posts depending on meta key.
 ```wp post list --field=ID --meta_key=<meta key> '--meta_compare=NOT EXISTS' | xargs -I % wp example transform run --post_id=%```
 
