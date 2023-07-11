@@ -1,6 +1,7 @@
 ```bash
 SELECT 
-  DISTINCT(wpUser.ID) AS "WP User ID", 
+  wpUser.ID AS "WP User ID",
+  wpUser.user_registered AS "Date Registered",
   MAX(
     CASE WHEN userMeta.meta_key = 'old_user_id' THEN userMeta.meta_value ELSE NULL END
   ) AS "GUID", 
@@ -12,7 +13,7 @@ SELECT
   ) AS "Last Name" 
 FROM 
   wp_users AS wpUser 
-  LEFT JOIN wp_usermeta AS userMeta ON wpUser.ID = userMeta.user_id 
+  LEFt JOIN wp_usermeta AS userMeta ON wpUser.ID = userMeta.user_id 
 WHERE 
   EXISTS(
     SELECT 
@@ -29,8 +30,9 @@ WHERE
           old_memberships
       )
   ) 
-  AND CAST(wpUser.user_registered AS DATE) <= '2023-06-15' 
+  AND CAST(wpUser.user_registered AS DATE) <= '2023-06-15 00:00:00'
 GROUP BY 
   wpUser.ID
+ORDER BY user_registered DESC
 
 ```
