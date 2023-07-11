@@ -13,7 +13,7 @@ SELECT
   ) AS "Last Name" 
 FROM 
   wp_users AS wpUser 
-  LEFt JOIN wp_usermeta AS userMeta ON wpUser.ID = userMeta.user_id 
+  LEFT JOIN wp_usermeta AS userMeta ON wpUser.ID = userMeta.user_id 
 WHERE 
   EXISTS(
     SELECT 
