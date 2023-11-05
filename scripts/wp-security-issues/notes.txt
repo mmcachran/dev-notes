@@ -1,0 +1,6 @@
+https://github.com/wahabmirjan/wp-simple-nonce/blob/master/README.md
+https://bynicolas.com/code/wordpress-nonce/
+https://trustedsec.com/blog/tricks-for-weaponizing-xss
+https://nmap.org/nsedoc/scripts/http-wordpress-users.html
+
+
