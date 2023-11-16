@@ -39,6 +39,9 @@
 ### Run command on all posts depending on meta key.
 ```wp post list --field=ID --meta_key=<meta key> '--meta_compare=NOT EXISTS' | xargs -I % wp example transform run --post_id=%```
 
+### Get around locked tables
+```wp db export --single-transaction```
+
 ### Set a user to the same role across all sites on a multisite network.
 ```wp site list --field=url | xargs -I % wp user set-role <user ID> <role> --url=%```
 
