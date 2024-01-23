@@ -29,3 +29,13 @@ for i in $(cat remove_indices.txt); do echo "Deleting Index ""$i";  curl -XDELET
 ``` bash
 for line in $( wp db query 'SELECT ID from wp_posts WHERE post_type="interviews" AND post_date > "2018-12-31" AND post_date < "2020-01-01";' | awk '{print $1}' | sed 's/ID$//g' | sed '/^$/d' ); do wp eval "\$post_args = ep_prepare_post( $line ); ep_index_post( \$post_args, true );"; done;
 ```
+
+
+### Reindex all sites on network
+```bash
+for url in $(wp site list --field=url)
+do
+	echo "$url:"
+	wp elasticpress sync --per-page=100 --url=$url 
+done
+```
