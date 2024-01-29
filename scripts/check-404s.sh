@@ -9,9 +9,8 @@ readonly WORK_DIR=$(dirname "$(readlink --canonicalize-existing "${0}" 2> /dev/n
 
 
 WEBSITE_URLS=(
-    "https://www.highpoint.edu/"
     "https://www.highpoint.edu/familyweekend/event/nido-and-mariana-qubein-childrens-museum-tours-3/"
-    "https://www.highpoint.edu/familyweekend/event/art-gallery-friday/"
+    "https://www.google.com/"
 )
 
 for url in "${WEBSITE_URLS[@]}"; do
