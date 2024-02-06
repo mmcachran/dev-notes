@@ -42,6 +42,11 @@
 ### Get around locked tables
 ```wp db export --single-transaction```
 
+### Reindex only public sites and exclude the main site
+```
+for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1 --exclude=1); do echo "Indexing site: $url"; wp elasticpress sync --per-page=100 --url=$url; done
+```
+
 ### Set a user to the same role across all sites on a multisite network.
 ```wp site list --field=url | xargs -I % wp user set-role <user ID> <role> --url=%```
 
