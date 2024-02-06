@@ -49,4 +49,10 @@
 ```for postID in $(wp post list --post_type=page --field=ID); do wp post meta update $postID sort_date "$(wp post get $postID --field=post_date)"; echo "$postID"; done;```
 
 ### Reindex only public sites.
-```for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url" && wp elasticpress sync --per-page=100 --url=$url --force --quiet --yes; done```
+```bash
+for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url" && wp elasticpress sync --per-page=100 --url=$url --force --quiet --yes; done
+```
+### or
+```bash
+for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url"; yes "y" | wp elasticpress sync --per-page=100 --url=$url --force --quiet; done
+```
