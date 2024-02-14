@@ -56,3 +56,9 @@ for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do e
 ```bash
 for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url"; yes "y" | wp elasticpress sync --per-page=100 --url=$url --force --quiet; done
 ```
+
+### Backup database
+* https://gist.github.com/lukecav/f333618818b2be33bb8ff96a0d90faac
+```bash
+wp db export --all-tablespaces --single-transaction --quick --lock-tables=false - | gzip -9 - > wordpress-dump.sql.gz
+```
