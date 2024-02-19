@@ -54,7 +54,7 @@ for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do e
 ```
 ### or
 ```bash
-for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url"; yes "y" | wp elasticpress sync --per-page=100 --url=$url --force --quiet; done
+for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do echo "Indexing site: $url"; yes "y" | wp elasticpress sync --per-page=100 --url=$url --force --quiet --yes; done
 ```
 
 ### Backup database
