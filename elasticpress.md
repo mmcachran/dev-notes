@@ -39,3 +39,8 @@ do
 	wp elasticpress sync --per-page=100 --url=$url 
 done
 ```
+
+### Misc
+```bash
+for url in $(wp site list --field=url); do echo "Indexing site: $url"; wp elasticpress sync --per-page=100 --url=$url --force --quiet --yes; done && wp elasticpress recreate-network-alias --force
+```
