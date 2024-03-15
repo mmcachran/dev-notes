@@ -62,3 +62,13 @@ for url in $(wp site list --field=url --archived=0 --deleted=0 --public=1); do e
 ```bash
 wp db export --all-tablespaces --single-transaction --quick --lock-tables=false - | gzip -9 - > wordpress-dump.sql.gz
 ```
+
+### List all site URLs in a multisite network
+```bash
+WP_CLI_PATH="./wp-cli.phar" && WP_ROOT_PATH="./wp/." && for url in $(${WP_CLI_PATH} site list --path="${WP_ROOT_PATH}" --field=url 2>/dev/null); do bash -c "${WP_CLI_PATH} option get siteurl --path="${WP_ROOT_PATH}"  --url="${url}" 2>/dev/null"; done;
+
+WP_CLI_PATH="./wp-cli.phar" && \
+WP_ROOT_PATH="./wp/." && \
+for url in $(${WP_CLI_PATH} site list --path="${WP_ROOT_PATH}" --field=url 2>/dev/null); do bash -c "${WP_CLI_PATH} option get siteurl --path="${WP_ROOT_PATH}"  --url="${url}" 2>/dev/null"; done;
+
+```
