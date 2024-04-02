@@ -76,5 +76,5 @@ WP_CLI_PATH="./wp-cli.phar" && WP_ROOT_PATH="./wp/." && for url in $(${WP_CLI_PA
 
 ### Create super admin
 ```bash
-./wp-cli.phar --path=./wp/. user create <username> <email> --user_pass=<password> --role=administrator --porcelain | xargs -I {} bash -c "wp super-admin add {}"
+./wp-cli.phar --path=./wp/. user create <username> <email> --user_pass=<password> --role=administrator --porcelain | xargs -I {} bash -c "./wp-cli.phar --path=./wp/. super-admin add {}"
 ```
