@@ -73,3 +73,8 @@ for url in $(${WP_CLI_PATH} site list --path="${WP_ROOT_PATH}" --field=url 2>/de
 
 WP_CLI_PATH="./wp-cli.phar" && WP_ROOT_PATH="./wp/." && for url in $(${WP_CLI_PATH} site list --path="${WP_ROOT_PATH}" --field=url 2>/dev/null); do bash -c "${WP_CLI_PATH} elasticpress sync --quiet --per-page=50 --path="${WP_ROOT_PATH}"  --url="${url}" 2>/dev/null"; done;
 ```
+
+### Create super admin
+```bash
+./wp-cli.phar --path=./wp/. user create <username> <email> --user_pass=<password> --role=administrator --porcelain | xargs -I {} bash -c "wp super-admin add {}"
+```
