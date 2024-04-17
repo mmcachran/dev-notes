@@ -109,3 +109,8 @@ ssh-keygen -E md5 -lf ssh_host_ecdsa_key.pub
 ```bash
 cat file.xml | xmlstarlet sel -t -m -n "/rss/channel/item" -v "listing_title"
 ```
+
+### Find directory size
+```bash
+du -sh -- *
+```
