@@ -78,3 +78,12 @@ WP_CLI_PATH="./wp-cli.phar" && WP_ROOT_PATH="./wp/." && for url in $(${WP_CLI_PA
 ```bash
 ./wp-cli.phar --path=./wp/. user create <username> <email> --user_pass=<password> --role=administrator --porcelain | xargs -I {} bash -c "./wp-cli.phar --path=./wp/. super-admin add {}"
 ```
+
+### Check for updates
+```bash
+wp plugin list | \
+ awk 'BEGIN{N=0;} \
+  ($3=="available"){N++; print $0;} \
+  END{print(N>0)?"Plugin updates available: "N:"No plugin updates available";}'
+
+```
