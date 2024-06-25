@@ -114,3 +114,8 @@ cat file.xml | xmlstarlet sel -t -m -n "/rss/channel/item" -v "listing_title"
 ```bash
 du -sh -- *
 ```
+
+### Get information about top 5 PIDs
+```bash
+watch "ps aux | sort -nrk 3,3 | head -n 5"
+```
