@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-##########################################################################
-#Purpose: This script will take two argument as username and create user
-##########################################################################
-
 #Creating variables
 user1=$1
 user2=$2
