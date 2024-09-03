@@ -85,5 +85,9 @@ wp plugin list | \
  awk 'BEGIN{N=0;} \
   ($3=="available"){N++; print $0;} \
   END{print(N>0)?"Plugin updates available: "N:"No plugin updates available";}'
+```
 
+### Purge cache on all sites
+```bash
+wp site list --field=url | xargs -I % bash -c "echo 'URL:' % && wp rewrite flush --url=% && wp cache flush --url=% && wp transient delete --all --url=% && wp beaver clearcache --url=%"
 ```
