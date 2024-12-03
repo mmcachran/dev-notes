@@ -12,7 +12,19 @@ function appp_is_user_email_domain_valid(string $user_email): bool
         return true;
     }
 
-    return (strpos(@file_get_contents($blacklisted_domains_path), $user_email) === false);
+    $blacklisted_user_email_domains = @file_get_contents($blacklisted_domains_path);
+
+    if (empty($blacklisted_user_email_domains))  {
+        return true;
+    }
+
+    $user_email_parts = explode('@', $user_email);
+
+    if (empty($user_email_parts[1])) {
+        return false;
+    }
+
+    return (strpos($blacklisted_user_email_domains, trim($user_email_parts[1])) === false);
 }
 
 \add_filter(
