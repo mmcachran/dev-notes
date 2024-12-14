@@ -8,3 +8,8 @@
 Ctrl-b
 :set -g mouse on
 ```
+
+### Swap  panes
+```
+ctrl-b :swap-pane -U
+```
