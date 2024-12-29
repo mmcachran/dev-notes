@@ -1,5 +1,5 @@
 ```
-# 10. Show all container names, status, container port, host port and docker network info for each docker container
+# Show all container names, status, container port, host port and docker network info for each docker container
 (
 echo -e "NAMES\tSTATUS\tHOST PORT\tCONTAINER PORT\tNETWORK ID\tNETWORK NAME\tDRIVER"
 docker ps --format "{{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Networks}}" | while IFS=$'\t' read -r name status ports networks; do
