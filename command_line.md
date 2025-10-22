@@ -119,3 +119,8 @@ du -sh -- *
 ```bash
 watch "ps aux | sort -nrk 3,3 | head -n 5"
 ```
+
+### Unzip all files in a directory into a subdirectory
+```bash
+find . -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
+```
