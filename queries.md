@@ -1,4 +1,4 @@
-```bash
+```sql
 SELECT 
   wpUser.ID AS "WP User ID",
   wpUser.user_registered AS "Date Registered",
@@ -34,5 +34,8 @@ WHERE
 GROUP BY 
   wpUser.ID
 ORDER BY user_registered DESC
+```
 
+```sql
+SELECT option_name, autoload, LENGTH(option_value) as size FROM wp_options WHERE option_name LIKE '%_transient_%' OR option_name LIKE '%_transient' ORDER BY size DESC LIMIT 20;"
 ```
