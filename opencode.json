@@ -2,7 +2,7 @@ Update at ~/.config/opencode/opencode.json
 
 ```json
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://opencode.ai",
   "model": "ollama/qwen3-coder:latest",
   "share": "disabled",
   "autoupdate": true,
@@ -12,6 +12,11 @@ Update at ~/.config/opencode/opencode.json
     "auto": true,
     "reserved": 4096
   },
+  "instructions": [
+    "rector.php",
+    "pint.json",
+    "CONTRIBUTING.md"
+  ],
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -21,10 +26,10 @@ Update at ~/.config/opencode/opencode.json
       },
       "models": {
         "qwen3-coder:latest": {
-          "name": "qwen3-coder:latest"
-        },
-        "qwen2.5-coder:7b": {
-          "name": "qwen2.5-coder:7b"
+          "name": "qwen3-coder:latest",
+          "options": {
+            "textVerbosity": "low"
+          }
         }
       }
     }
@@ -35,10 +40,10 @@ Update at ~/.config/opencode/opencode.json
       "*": "ask",
       "git status": "allow",
       "git diff*": "allow",
-      "git log*": "allow",
       "ls*": "allow",
       "pwd": "allow",
-      "date": "allow"
+      "vendor/bin/pint*": "allow",
+      "vendor/bin/rector*": "allow"
     },
     "read": "allow",
     "todowrite": "allow"
