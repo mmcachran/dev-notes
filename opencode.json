@@ -1,0 +1,47 @@
+Update at ~/.config/opencode/opencode.json
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama/qwen3-coder:latest",
+  "share": "disabled",
+  "autoupdate": true,
+  "theme": "palenight",
+  "default_agent": "build",
+  "compaction": {
+    "auto": true,
+    "reserved": 4096
+  },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3-coder:latest": {
+          "name": "qwen3-coder:latest"
+        },
+        "qwen2.5-coder:7b": {
+          "name": "qwen2.5-coder:7b"
+        }
+      }
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "git status": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "ls*": "allow",
+      "pwd": "allow",
+      "date": "allow"
+    },
+    "read": "allow",
+    "todowrite": "allow"
+  }
+}
+```
