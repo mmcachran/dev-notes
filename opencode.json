@@ -3,20 +3,12 @@ Update at ~/.config/opencode/opencode.json
 ```json
 {
   "$schema": "https://opencode.ai",
-  "model": "ollama/qwen3-coder:latest",
+  "model": "ollama/qwen2.5-coder:7b",
   "share": "disabled",
-  "autoupdate": true,
-  "theme": "palenight",
-  "default_agent": "build",
   "compaction": {
     "auto": true,
-    "reserved": 4096
+    "reserved": 2048
   },
-  "instructions": [
-    "rector.php",
-    "pint.json",
-    "CONTRIBUTING.md"
-  ],
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -25,28 +17,16 @@ Update at ~/.config/opencode/opencode.json
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "qwen3-coder:latest": {
-          "name": "qwen3-coder:latest",
+        "qwen2.5-coder:7b": {
+          "name": "qwen2.5-coder:7b",
           "options": {
-            "textVerbosity": "low"
+            "textVerbosity": "low",
+            "temperature": 0.1,
+            "num_ctx": 16384
           }
         }
       }
     }
-  },
-  "permission": {
-    "*": "ask",
-    "bash": {
-      "*": "ask",
-      "git status": "allow",
-      "git diff*": "allow",
-      "ls*": "allow",
-      "pwd": "allow",
-      "vendor/bin/pint*": "allow",
-      "vendor/bin/rector*": "allow"
-    },
-    "read": "allow",
-    "todowrite": "allow"
   }
 }
 ```
